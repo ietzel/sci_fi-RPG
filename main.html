@@ -1,21 +1,18 @@
 <DOCTYPE! html>
   <html>
     <head>
-      <script src="processing-1.9.0.js"></script>
+      <script src="p5.js"></script>
     </head>
     <body>
       <script>
         function setup() {
-          createCanvas(100, 100, WEBGL);
+          createCanvas(800, 700, WEBGL);
           normalMaterial();
-          describe(
-            'Camera orbits around a box when mouse is hold-clicked & then moved.'
-          );
         }
         function draw() {
-          background(200);
+          background(400);
           orbitControl(1, 1, 1, {freeRotation: true});
-          box(16);
+          //box(16);
           rotateY(0.5);
           box(16);
         }            
