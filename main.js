@@ -1,0 +1,14 @@
+function setup() {
+  createCanvas(100, 100, WEBGL);
+  normalMaterial();
+  describe(
+    'Camera orbits around a box when mouse is hold-clicked & then moved.'
+  );
+}
+function draw() {
+  background(200);
+  orbitControl(1, 1, 1, {freeRotation: true});
+  box(16);
+  rotateY(0.5);
+  box(16);
+}
