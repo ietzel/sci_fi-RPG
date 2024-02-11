@@ -1,21 +1,22 @@
 <DOCTYPE! html>
-  <html>
-    <head>
-      <script src="p5.js"></script>
-    </head>
-    <body>
-      <script>
-        function setup() {
-          createCanvas(800, 700, WEBGL);
-          normalMaterial();
+<html>
+  <head>
+    <script src="p5.js"></script>
+  </head>
+  <body>
+    <script>
+      function setup() {
+        createCanvas(800, 700, WEBGL);
+        normalMaterial();
+      }
+      function draw() {
+        background(400);
+        orbitControl(1, 1, 1, {freeRotation: true});
+        rotateY(0.5);
+        for(var i = 0; i < 8; i++) {
+          box(16).position(0, i*16);  
         }
-        function draw() {
-          background(400);
-          orbitControl(1, 1, 1, {freeRotation: true});
-          //box(16);
-          rotateY(0.5);
-          box(16);
-        }            
-      </script>
-    </body>  
-  </html>
+      }            
+    </script>
+  </body>  
+</html>
