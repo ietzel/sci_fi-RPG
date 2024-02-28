@@ -5,6 +5,11 @@
   </head>
   <body>
     <script>
+      var characters = [[][]];
+      characters[0][0] = mc.create_character(10, 10, 10, 10);
+      for(var j = 0; j < 1; j++) {
+          characters[1][j] = j.create_character(10, 10, 10, 10);  
+      }
       function setup() {
         createCanvas(800, 700, WEBGL);
         normalMaterial();
@@ -16,7 +21,24 @@
         for(var i = 0; i < 8; i++) {
           box(16).position(0, i*16);  
         }
-      }            
+      }
+      this.create_character = function(atck, dfse, agit, ment) {
+          this.atck = atck;
+          this.dfse = dfse;
+          this.agit = agit; 
+          this.ment = ment;
+          this.x = 0;
+          this.y = 0;
+          this.z = 0;
+          this.dX = 0;
+          this.dY = 0;
+          this.dZ = 0;
+          this.update = function() {
+              this.x += this.dX;
+              this.y += this.dY;
+              this.z += this.dZ;
+          }       
+      }
     </script>
   </body>  
 </html>
