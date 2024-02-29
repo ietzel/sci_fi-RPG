@@ -6,6 +6,7 @@
   <body>
     <script>
       var characters = [[][]];
+      var solids = [[][]];
       characters[0][0] = mc.create_character(10, 10, 10, 10);
       for(var j = 0; j < 1; j++) {
           characters[1][j] = j.create_character(10, 10, 10, 10);  
@@ -17,9 +18,13 @@
       function draw() {
         background(400);
         orbitControl(1, 1, 1, {freeRotation: true});
-        rotateY(0.5);
         for(var i = 0; i < 8; i++) {
-          box(16).position(0, i*16);  
+          for(var j = 0; j < 8; j++) {
+            push();
+            translate(i*16, j*16, 0);
+            solids[i][j] = box(16);
+            pop();
+          }
         }
       }
       this.create_character = function(atck, dfse, agit, ment) {
