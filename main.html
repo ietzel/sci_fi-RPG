@@ -6,23 +6,23 @@
   <body>
     <script>
       var characters = [[],[]];
-      var solids = [[],[]];
+      var solids = [[[],[]],[[],[]]];
       characters[0][0] = new create_character(10, 10, 10, 10);
       for(var j = 0; j < 1; j++) {
           characters[1][j] = new create_character(10, 10, 10, 10);  
       }
       function setup() {
-        createCanvas(800, 700, WEBGL);
+        createCanvas(1024, 1024, WEBGL);
         normalMaterial();
       }
       function draw() {
         background(400);
         orbitControl(1, 1, 1, {freeRotation: true});
         for(var i = 0; i < 8; i++) {
-          for(var j = 0; j < 8; j++) {
+          for(var k = 0; k < 8; k++) {
             push();
-            translate(i*16, j*16, 0);
-            solids[i][j] = box(16);
+            translate(i*16, 0, k*16);
+            solids[i][0][k] = box(16);
             pop();
           }
         }
