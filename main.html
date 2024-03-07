@@ -7,10 +7,9 @@
     <script>
       var characters = [[],[]];
       var solids = [[],[]];
-      var mc = create_character(10, 10, 10, 10);
-      characters[0][0] = mc;
+      characters[0][0] = new create_character(10, 10, 10, 10);
       for(var j = 0; j < 1; j++) {
-          characters[1][j] = j.create_character(10, 10, 10, 10);  
+          characters[1][j] = new create_character(10, 10, 10, 10);  
       }
       function setup() {
         createCanvas(800, 700, WEBGL);
